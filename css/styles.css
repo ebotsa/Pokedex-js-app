@@ -1,0 +1,21 @@
+.box-sizing * {
+  box-sizing: border-box;
+}
+
+ul li .pokemon-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 250px;
+  margin: 0 auto;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.button-class {
+  background-color: transparent;
+  border: none;
+  color: rgb(45, 18, 70);
+  border: 2px solid #af4c4c;
+}

@@ -19,15 +19,15 @@ let pokemonList = [{
 	pokename: 'Beedrill',
 	height: 1,
 	types: ['Bug', 'Poison']
-}]
+}];
 //puts an array of objects in pokemonList
 // forEach list Pokemon names and heights
-for(let i = 0; i < pokemonList.length; i++) console.log(i);
-// document.write("<p>" + pokemonList[i].name + "</p>");
- document.write(pokemon.name + ' (height: ' + pokemon.height + ')');
+for(let i = 0; i < pokemonList.length; i++)
 //Conditional to print " - Wow, that's big!" if height is over 1.5
-if(pokemon.height > 1.5) {
-	document.write(" - Wow, that's big!");
+	if(pokemonList.height > 1.5) {
+	document.write(pokemonList[i].name + "- Wow, that's big!");
+	// document.write("<p>" + pokemonList[i].name + "</p>");
+	 document.write("<p>" + pokemonList[i].name + "</p>");
 }
-console.log(pokemonList[i].name + " ");
-//Line break between each pokemon's name
+
+

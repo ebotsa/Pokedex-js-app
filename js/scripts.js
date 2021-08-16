@@ -34,3 +34,8 @@ let pokemonRepository = (function() {
 	};
 })();
 console.log(pokemonRepository.getAll());
+pokemonRepository.getAll().forEach(function (pokemon) {
+console.log(pokemon)
+});
+
+

@@ -1,8 +1,8 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
 
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-  let modalContainer = document.querySelector('#modal_container');
+let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  let modalContainer = document.querySelector('#modal-container');
 
   function add(pokemon) {
     pokemonList.push(pokemon);
@@ -21,7 +21,7 @@ modalContainer.innerHTML = '';
   modal.classList.add('modal');
 
   let closeButtonElement = document.createElement('button');
-  closeButtonElement.classList.add('modal_close');
+  closeButtonElement.classList.add('modal-close');
   closeButtonElement.innerText = 'Close'
   closeButtonElement.addEventListener('click', hideModal);
 
@@ -34,7 +34,7 @@ modalContainer.innerHTML = '';
   type: ${pokemon.types.join(', ')}`;
 
   let pokemonSprite =  document.createElement('img');
-  pokemonSprite.classList.add('pokemon_sprite');
+  pokemonSprite.classList.add('pokemon-sprite');
   pokemonSprite.src = pokemon.imageUrl;
 
   modal.appendChild(closeButtonElement);
@@ -43,14 +43,16 @@ modalContainer.innerHTML = '';
   modal.appendChild(pokemonSprite);
   modalContainer.appendChild(modal);
 
-  modalContainer.classList.add('is_visible');
+  modalContainer.classList.add('is-visible');
 
-  function hideModal(){
-    modalContainer.classList.remove('is_visible');
   }
 
+  function hideModal(){
+    modalContainer.classList.remove('is-visible');
+  }
+  
   window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalContainer.classList.contains('is_visible')){
+    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')){
       hideModal();
     }
   });
@@ -61,11 +63,6 @@ modalContainer.innerHTML = '';
       hideModal();
     }
   });
-
-  document.querySelector('#show_modal').addEventListener('click', () => {
-    showModal();
-  });
-}
   //adds pokemon to pokedex
   function addListItem(pokemon) {
     let pokemonList = document.querySelector('.pokemon_list');
@@ -136,3 +133,5 @@ pokemonRepository.getAll().forEach(function(pokemon) {
   pokemonRepository.addListItem(pokemon)
 });
 });
+
+

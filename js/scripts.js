@@ -4,15 +4,22 @@ let pokemonRepository = (function() {
 	let modalContainer = document.querySelector('#modal-container');
 	let searchInput = document.querySelector('#searchIn');
 	// to push pokemons
-	function add(pokemon) {
-		if(typeof pokemon === 'object' && 'name' in pokemon) {
-			pokemonList.push(pokemon);
-		} else alert('try again');
-	}
+	 function add(pokemon) {
+      if (
+        typeof pokemon === "object" && "name" in pokemon) 
+      {
+        pokemonList.push(pokemon);
+      } else {
+        console.log("pokemon is not correct");
+      }
+    }
+
 	//returning pokemon list
 	function getAll() {
 		return pokemonList;
 	}
+
+
 	//shows modal with pokemon info
 	function showModal(pokemon) {
 		let modalBody = $('.modal-body');
@@ -27,8 +34,9 @@ let pokemonRepository = (function() {
 		imageElementBack.attr('src', pokemon.imageUrlBack);
 		let heightElement = $('<p>' + 'height :' + pokemon.height + '</p>');
 		let weightElement = $('<p>' + 'weight :' + pokemon.weight + '</p>');
-		let typesElement = $('<p>' + 'types :' + pokemon.types + '</p>');
-		let abilitiesElement = $('<p>' + 'abilities :' + pokemon.abilities + '</p>');
+		let typesElement = $('<p>' + 'types : ' + pokemon.types.join(', ') + '</p>');
+		let abilitiesElement = $('<p>' + 'Abilities : ' + item.abilities.join(', ') + '</p>');
+		
 
 		//Appending the modal elements
 		modalTitle.append(nameElement);
@@ -42,7 +50,7 @@ let pokemonRepository = (function() {
   
 	// //adds pokemon to pokedex
 	function addListItem(pokemon) {
-		let pokemonList = document.querySelector('.list-group');
+		let pokemonList = document.querySelector('.pokemon-list');
 		let listPokemon = document.createElement('li');
 		listPokemon.classList.add('.list-group-item', 'list-group-item-action');
 		let button = document.createElement('button');
@@ -80,9 +88,9 @@ let pokemonRepository = (function() {
 				return x.ability.name;
 			});
 		}).catch(function(e) {
-			/* eslint-disable no-console */
+		
 			console.error(e);
-			/* eslint-enable no-console */
+	
 		});
 	}
 

@@ -1,105 +1,67 @@
-
-.navbar {
-  position: fixed;
-  width: 100%;
-  height: 100px;
-  bottom: 20px;
- 
+.page-container {
+	margin-top: 60px;
 }
 
 body {
-  
-  font-family: 'Atkinson Hyperlegible', sans-serif;
-  font-size: 30px;
-  /* text-shadow: 4px 4px 4px #aaa; */
-  line-height: 1.6;
-  text-align: center;
-  margin: 150px;
-}
-
-/* pokemon buttons */
-.button-class {
-
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  cursor: pointer;
-  border: 2px solid #FF5252;
-}
-
-/* search button */
-.btn {
-  
-  font-size: 20px;
-  padding: 2px 4px;
-  border-radius: 4px;
-  color: #004D43;
-  border-color: #004D43; 
-}
-
-.btn:hover {
-  background-color: #FF5252;
-}
-
-/* pokemon buttons */
-.btn-success {
- 
-  font-size: 20px;
-  padding: 2px 200px;
-  border-radius: 8px;
-  color: #fff3e0;
-  border-color: #004D43; 
-  }
-
-  .btn-success:hover {
-    background-color: #02bfa5 !important;
-}
-
-#modal-container {
-  display: none;
-}
-
-#modal-container.is-visible {
-  display: grid;
-  position: fixed;
-  padding: 20px;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
- 
-
-  /* to show it above other content */
-  z-index: 999;
-
-  /* to allow scrolling if the screen is not high enough */
-  overflow: auto;
-
-  /* this is used to center the modal */
-  text-align: center;
-
+	background-color: rgb(222, 176, 208);
+	font-family: 'Tangerine', serif;
+	font-size: 38px;
+	text-shadow: 4px 4px 4px #aaa;
+	line-height: 1.6;
+	text-align: center;
+	margin: 25px;
 }
 
 ul {
-  list-style-type: none;
-  }
-
-.pokemon-header {
-  font-family: 'Fredoka One', cursive;
-  color: #fff3e0;
+	list-style: none;
 }
 
-#btn-back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: none;
+.list-group {
+	margin: 20px;
+	margin-top: 30px;
+}
+
+.list-group-item {
+	background-color: #f3ff05;
+	text-align: center;
+	position: relative;
+	font-family: inherit;
+	font-size: 20px;
+	cursor: pointer;
+	transition-duration: 0.4s;
+}
+
+.navbar {
+	position: top;
+	width: 100%;
+	height: 200px;
+	bottom: 20px;
+	background-color: #306d80;
+}
+
+.buton:hover,
+.button:focus {
+	background-color: #169e63;
+	cursor: pointer;
+	transition-duration: 0.4s;
+}
+
+.btn {
+	background-color: #a9d6c3;
+	font-size: 70px;
+	padding: 2px 4px;
+}
+
+@media all and (max-width: 600px) {
+	.navbar {
+		display: block;
+	}
+}
+
+@media (max-width: 600px) {
+	.navbar {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+	}
 }

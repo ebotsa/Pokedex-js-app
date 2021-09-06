@@ -27,7 +27,8 @@ function showModal(pokemon) {
     let imageElementBack = $('<img class="modal-img" style="width:40%">');
     imageElementBack.attr('src', pokemon.image_back);
     let heightElement = $('<p>' + 'height :' + pokemon.height + '</p>');
-   let weightElement = $('<p>' + 'weight :' + pokemon.weight + '</p>');
+  let weightElement = $('<p>' + 'weight :' + item.weight + '</p>');
+   let abilitiesElement = $('<p>' + 'abilities :' + item.abilities + '</p>');
     let typesElement = $('<p>' + 'types : ' + pokemon.types.join(', ') + '</p>');
 	
 
@@ -37,9 +38,8 @@ function showModal(pokemon) {
     modalBody.append(imageElementFront);
     modalBody.append(imageElementBack);
     modalBody.append(heightElement);
-    modalBody.append(typesElement);
-	modalBody.append(weightElement);
-	
+    modalBody.append(weightElement);
+    modalBody.append(abilitiesElement);
 	
   }
 
@@ -93,10 +93,11 @@ function showModal(pokemon) {
       //add the details to the item
       const pokemonType = details.types.map((type) => type.type.name);
       item.image_front = details.sprites.front_default;
-      item.image_back  = details.sprites.back_default;
+      item.image_back = details.sprites.back_default;
 		item.height = details.height;
 		item.weight = details.weight;
-      item.types = pokemonType;
+      item.types = pokemonType; 
+      
     }).catch(function (e) {
       console.error(e);
     });
